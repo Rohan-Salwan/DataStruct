@@ -19,7 +19,7 @@ class avlbst:
 
 
     def maxx(self,a,b):
-        if a < b:
+        if a < c:
             return b
         else:
             return a
