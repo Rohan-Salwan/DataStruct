@@ -19,7 +19,7 @@ class avlbst:
 
 
     def maxx(self,a,b):
-        if a < c:
+        if a < b:
             return b
         else:
             return a
@@ -105,44 +105,6 @@ class avlbst:
     def deletion(self):
         gh =int(input(''))
         self.root=self.wipe(self.root,gh)
-
-    def wipe(self,d,ff):
-        if self.root == None:
-            print('tree is empty')
-        else:
-            if d==None:
-                return None
-            else:
-                if ff < d.data:
-                    d.left=self.wipe(d.left,ff)
-                elif ff > d.data:
-                    d.right =self.wipe(d.right,ff)
-                if ff == d.data:
-                    if d.left==None and d.right ==None:
-                        return None
-                    elif d.left ==None and d.right!=None:
-                        d=d.right
-                    elif d.left!=None and d.right ==None:
-                        d=d.left
-                    elif d.left!=None and d.right != None:
-                        self.numbermax(d.left)
-                        d.data=self.temp.data
-                        self.wipe(self.root,self.temp.data)
-                    else:
-                        pass
-                balancee=self.balance(d)
-                if balancee > 1 and ff < d.left.data:
-                    return self.rightrotation(d)
-                if balancee < -1 and ff > d.right.data:
-                    return self.leftrotation(d)
-                if balancee > 1 and ff > d.left.data:
-                    d.left = self.leftrotation(d.left)
-                    return self.rightrotation(d)
-                if balancee < -1 and ff < d.right.data:
-                    d.right=self.rightrotation(d.right)
-                    return self.leftrotation(d)
-            return d
-
 
 
 
